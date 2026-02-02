@@ -53,9 +53,8 @@ const Hero: React.FC = () => {
               className="text-4xl md:text-6xl lg:text-7xl font-semibold text-white tracking-tight leading-[1.05] mb-8"
               style={{ textWrap: "balance" } as React.CSSProperties}
             >
-              Escalá tu SaaS <br />
-              con un sistema predecible de <br />
-              <span className="text-gradient">reuniones calificadas.</span>
+              Más reuniones calificadas. <br />
+              <span className="text-gradient">Sin improvisar ni depender de referidos.</span>
             </motion.h1>
 
             <motion.p
@@ -64,19 +63,8 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-fino-text mb-10 leading-relaxed max-w-lg font-light"
             >
-              Sin quemar presupuesto. Sin improvisar. <br />Sin depender de referidos.
+              Implementamos sistemas de adquisición predecibles para SaaS B2B con PMF validado.
             </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.25 }}
-              className="space-y-4 mb-10"
-            >
-              <p className="text-fino-text/80 text-sm leading-relaxed border-l border-fino-purple/50 pl-4">
-                Implementamos un <strong className="text-white">sistema de growth</strong> para <strong className="text-white">SaaS B2B</strong> con <strong className="text-white">PMF validado</strong> que te permite aumentar entre <strong className="text-white">25% y 50%</strong> las <strong className="text-white">reuniones mensuales</strong>, manteniendo o mejorando el <strong className="text-white">costo por reunión</strong>.
-              </p>
-            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -92,38 +80,14 @@ const Hero: React.FC = () => {
               </a>
             </motion.div>
 
-            {/* Esto es para - Glass Card */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="glass-panel rounded-2xl p-6 relative overflow-hidden group hover:border-fino-purple/30 transition-colors duration-500"
-            >
-              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <p className="text-xs font-semibold text-white/50 uppercase mb-4 tracking-wider">Esto es para</p>
-              <ul className="space-y-3 relative z-10">
-                <li className="flex items-start gap-3 text-sm text-fino-text">
-                  <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-fino-purple flex-shrink-0 shadow-[0_0_10px_rgba(118,63,245,0.8)]"></div>
-                  <span>SaaS B2B con MRR entre USD 5K y 50K /mes</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-fino-text">
-                  <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-fino-purple flex-shrink-0 shadow-[0_0_10px_rgba(118,63,245,0.8)]"></div>
-                  <span>Ideal si ya tenés producto validado, cierres y bajo churn</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-fino-text">
-                  <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-fino-purple flex-shrink-0 shadow-[0_0_10px_rgba(118,63,245,0.8)]"></div>
-                  <span>SaaS que buscan resultados medibles en 90 días</span>
-                </li>
-              </ul>
-            </motion.div>
-
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="mt-6 text-xs text-fino-text/40 font-medium text-center sm:text-left"
+              className="mt-6 text-sm text-fino-text/60 font-medium text-center sm:text-left max-w-lg"
             >
-              Resultados medibles · Pipeline limpio · Costos controlados
+              <span className="block mb-1 text-white/90">Aumenta 25-50% tus reuniones mensuales manteniendo o mejorando tus costos.</span>
+              <span className="opacity-80 block">Resultados medibles en 90 días.</span>
             </motion.p>
           </div>
 
