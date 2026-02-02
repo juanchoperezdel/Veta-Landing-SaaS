@@ -5,10 +5,13 @@ import Process from './Process';
 import Comparison from './Comparison';
 import Booking from './Booking';
 
+import TrustedBy from './TrustedBy';
+
 const Home: React.FC = () => {
     return (
         <>
             <Hero />
+            <TrustedBy />
             <PainPoints />
             <Process />
             <Comparison />
