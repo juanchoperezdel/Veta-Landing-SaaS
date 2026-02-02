@@ -4,7 +4,7 @@ import PainPoints from './PainPoints';
 import Process from './Process';
 import Comparison from './Comparison';
 import Booking from './Booking';
-
+import Faq from './Faq';
 import TrustedBy from './TrustedBy';
 
 const Home: React.FC = () => {
@@ -16,6 +16,7 @@ const Home: React.FC = () => {
             <Process />
             <Comparison />
             <Booking />
+            <Faq />
         </>
     );
 };
