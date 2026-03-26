@@ -1,1 +1,5 @@
-/* /index.html 200
+/blog/*  https://veta-blog.netlify.app/blog/:splat  200
+/_astro/*  https://veta-blog.netlify.app/_astro/:splat  200
+/sitemap-index.xml  https://veta-blog.netlify.app/sitemap-index.xml  200
+/sitemap-0.xml  https://veta-blog.netlify.app/sitemap-0.xml  200
+/*  /index.html  200

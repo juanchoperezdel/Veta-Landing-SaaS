@@ -1,20 +1,28 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
 # Blog proxy (veta-blog en Netlify)
 [[redirects]]
   from = "/blog/*"
   to = "https://veta-blog.netlify.app/blog/:splat"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/_astro/*"
   to = "https://veta-blog.netlify.app/_astro/:splat"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/sitemap-index.xml"
   to = "https://veta-blog.netlify.app/sitemap-index.xml"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/sitemap-0.xml"
   to = "https://veta-blog.netlify.app/sitemap-0.xml"
   status = 200
+  force = true
