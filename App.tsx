@@ -16,6 +16,7 @@ function Layout() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/google" element={<Home />} />
           <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
       </main>
