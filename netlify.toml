@@ -2,6 +2,13 @@
   command = "npm run build"
   publish = "dist"
 
+# Forzar URL canónica del blog sin trailing slash (coincide con <link rel="canonical">)
+[[redirects]]
+  from = "/blog/:slug/"
+  to = "/blog/:slug"
+  status = 301
+  force = true
+
 # Blog proxy (veta-blog en Netlify)
 [[redirects]]
   from = "/blog/*"
