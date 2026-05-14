@@ -22,13 +22,14 @@ const Booking: React.FC = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="glass-panel rounded-3xl overflow-hidden shadow-2xl mx-auto border border-white/10 min-h-[600px] flex items-center justify-center bg-[#0E0E10]"
+          className="glass-panel rounded-3xl overflow-hidden shadow-2xl mx-auto border border-white/10 bg-[#0E0E10]"
         >
           <iframe
-            src="https://www.vetaagency.com/widget/booking/7G2vJ1L0FgJU1uDx2r4e"
-            style={{ width: '100%', height: '100%', minHeight: '800px', border: 'none', overflow: 'hidden' }}
+            src="https://www.vetaagency.com/widget/survey/6K5iKhHe67fViUBuGKZK"
+            style={{ border: 'none', width: '100%', display: 'block' }}
             scrolling="no"
-            id="7G2vJ1L0FgJU1uDx2r4e_1770044390163"
+            id="6K5iKhHe67fViUBuGKZK"
+            title="survey"
           ></iframe>
         </motion.div>
       </div>
