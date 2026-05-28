@@ -2,6 +2,12 @@
   command = "npm run build"
   publish = "dist"
 
+# SPA fallback — React Router maneja todas las rutas (incluye /softwarefactory)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
 # Forzar URL canónica del blog sin trailing slash (coincide con <link rel="canonical">)
 [[redirects]]
   from = "/blog/:slug/"
