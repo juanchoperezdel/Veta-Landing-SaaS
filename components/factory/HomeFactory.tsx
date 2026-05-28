@@ -6,7 +6,7 @@ import ROICalculator from './ROICalculator';
 import ProcessFactory from './ProcessFactory';
 import CaseStudies from './CaseStudies';
 import ComparisonFactory from './ComparisonFactory';
-import Booking from '../Booking';
+import BookingFactory from './BookingFactory';
 import FaqFactory from './FaqFactory';
 
 const HomeFactory: React.FC = () => {
@@ -19,7 +19,7 @@ const HomeFactory: React.FC = () => {
       <ProcessFactory />
       <CaseStudies />
       <ComparisonFactory />
-      <Booking />
+      <BookingFactory />
       <FaqFactory />
     </>
   );

@@ -13,6 +13,18 @@ function Layout() {
   const isThankYou = location.pathname === '/thank-you';
   const isFactory = location.pathname.startsWith('/softwarefactory');
 
+  React.useEffect(() => {
+    if (isFactory) {
+      document.title = 'VETA Dev - Software Factory · Desarrollo a Medida';
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', 'Construimos software a medida, automatizaciones con IA y agentes para empresas. Entrega predecible, código tuyo, soporte real.');
+    } else {
+      document.title = 'VETA - Growth System para SaaS B2B';
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', 'Escalá tu SaaS con un sistema predecible de reuniones calificadas.');
+    }
+  }, [isFactory]);
+
   if (isFactory) {
     return (
       <div className="min-h-screen flex flex-col font-sans bg-fino-bg text-fino-text selection:bg-fino-purple selection:text-white overflow-x-hidden">
