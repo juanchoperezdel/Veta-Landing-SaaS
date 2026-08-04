@@ -82,6 +82,16 @@
       box-shadow: 0 0 60px -20px rgba(118, 63, 245, 0.4);
     }
 
+    /* Scroll horizontal sin barra visible (navbar de páginas legales en mobile) */
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
     .bg-noise {
       position: fixed;
       top: 0;

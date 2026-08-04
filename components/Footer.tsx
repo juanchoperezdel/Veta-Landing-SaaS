@@ -1,6 +1,19 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { EMPRESA, CONTACTO } from './legal/legalData';
 
 const Footer: React.FC = () => {
+  const location = useLocation();
+  const isHome = location.pathname === '/' || location.pathname === '/google';
+
+  // En la home resolvemos el ancla con scroll suave; fuera de ella dejamos que
+  // React Router navegue a "/" y ScrollToTop se encargue del hash.
+  const irASeccion = (id: string) => (e: React.MouseEvent) => {
+    if (!isHome) return;
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-black border-t border-white/5 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,33 +36,45 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-white/40 text-xs uppercase tracking-widest mb-6">Secciones</h4>
             <ul className="space-y-3 text-sm text-fino-text">
-              <li><a href="#" className="hover:text-white transition-colors">Inicio</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Diagnóstico</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Solución</a></li>
+              <li><Link to="/#inicio" onClick={irASeccion('inicio')} className="hover:text-white transition-colors">Inicio</Link></li>
+              <li><Link to="/#diagnostico" onClick={irASeccion('diagnostico')} className="hover:text-white transition-colors">Diagnóstico</Link></li>
+              <li><Link to="/#solucion" onClick={irASeccion('solucion')} className="hover:text-white transition-colors">Solución</Link></li>
+              <li><Link to="/softwarefactory" className="hover:text-white transition-colors">Software Factory</Link></li>
             </ul>
           </div>
 
-          <div className="md:col-span-2">
+          <div>
+            <h4 className="font-bold text-white/40 text-xs uppercase tracking-widest mb-6">Legales</h4>
+            <ul className="space-y-3 text-sm text-fino-text">
+              <li><Link to="/terminos" className="hover:text-white transition-colors">Términos y Condiciones</Link></li>
+              <li><Link to="/privacidad" className="hover:text-white transition-colors">Política de Privacidad</Link></li>
+              <li><Link to="/contacto" className="hover:text-white transition-colors">Contacto</Link></li>
+            </ul>
+          </div>
+
+          <div>
             <h4 className="font-bold text-white/40 text-xs uppercase tracking-widest mb-6">Contacto</h4>
             <ul className="space-y-3 text-sm text-fino-text">
-              <li className="flex flex-col sm:flex-row gap-6">
-                <span className="hover:text-white transition-colors cursor-pointer flex items-center gap-2">
-                  <span className="w-1 h-1 bg-fino-purple rounded-full"></span>
-                  perezdelgadojc@veta.agency
-                </span>
-                <span className="hover:text-white transition-colors cursor-pointer flex items-center gap-2">
-                  <span className="w-1 h-1 bg-fino-purple rounded-full"></span>
-                  lahunagustin@veta.agency
-                </span>
+              <li>
+                <a href={`mailto:${CONTACTO.emailPrincipal}`} className="hover:text-white transition-colors flex items-center gap-2 break-all">
+                  <span className="w-1 h-1 bg-fino-purple rounded-full flex-shrink-0"></span>
+                  {CONTACTO.emailPrincipal}
+                </a>
               </li>
-              <li className="pt-4"><a href="#agendar" className="text-white font-bold hover:text-fino-purple transition-colors border-b border-white/20 pb-0.5 hover:border-fino-purple">Agendar llamada →</a></li>
+              <li>
+                <a href={`mailto:${CONTACTO.emailSecundario}`} className="hover:text-white transition-colors flex items-center gap-2 break-all">
+                  <span className="w-1 h-1 bg-fino-purple rounded-full flex-shrink-0"></span>
+                  {CONTACTO.emailSecundario}
+                </a>
+              </li>
+              <li className="pt-4"><Link to="/#agendar" onClick={irASeccion('agendar')} className="text-white font-bold hover:text-fino-purple transition-colors border-b border-white/20 pb-0.5 hover:border-fino-purple">Agendar llamada →</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-xs text-fino-text/40">
-            &copy; {new Date().getFullYear()} Veta. All rights reserved.
+          <p className="text-xs text-fino-text/40 text-center md:text-left">
+            &copy; {new Date().getFullYear()} {EMPRESA.razonSocial}. Todos los derechos reservados.
           </p>
           <div className="flex items-center bg-white/5 border border-white/5 px-4 py-2 rounded-full">
             <span className="text-[10px] text-fino-text/60 mr-3">Reuniones calificadas · Conversión real</span>

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { EMPRESA, CONTACTO } from '../legal/legalData';
 
 const FooterFactory: React.FC = () => {
   return (
@@ -26,21 +28,33 @@ const FooterFactory: React.FC = () => {
               <li><a href="#inicio" className="hover:text-white transition-colors">Inicio</a></li>
               <li><a href="#diagnostico" className="hover:text-white transition-colors">Servicios</a></li>
               <li><a href="#solucion" className="hover:text-white transition-colors">Proceso</a></li>
+              <li><Link to="/" className="hover:text-white transition-colors">Growth System</Link></li>
             </ul>
           </div>
 
-          <div className="md:col-span-2">
+          <div>
+            <h4 className="font-bold text-white/40 text-xs uppercase tracking-widest mb-6">Legales</h4>
+            <ul className="space-y-3 text-sm text-fino-text">
+              <li><Link to="/terminos" className="hover:text-white transition-colors">Términos y Condiciones</Link></li>
+              <li><Link to="/privacidad" className="hover:text-white transition-colors">Política de Privacidad</Link></li>
+              <li><Link to="/contacto" className="hover:text-white transition-colors">Contacto</Link></li>
+            </ul>
+          </div>
+
+          <div>
             <h4 className="font-bold text-white/40 text-xs uppercase tracking-widest mb-6">Contacto</h4>
             <ul className="space-y-3 text-sm text-fino-text">
-              <li className="flex flex-col sm:flex-row gap-6">
-                <span className="hover:text-white transition-colors cursor-pointer flex items-center gap-2">
-                  <span className="w-1 h-1 bg-fino-purple rounded-full"></span>
-                  perezdelgadojc@veta.agency
-                </span>
-                <span className="hover:text-white transition-colors cursor-pointer flex items-center gap-2">
-                  <span className="w-1 h-1 bg-fino-purple rounded-full"></span>
-                  lahunagustin@veta.agency
-                </span>
+              <li>
+                <a href={`mailto:${CONTACTO.emailPrincipal}`} className="hover:text-white transition-colors flex items-center gap-2 break-all">
+                  <span className="w-1 h-1 bg-fino-purple rounded-full flex-shrink-0"></span>
+                  {CONTACTO.emailPrincipal}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${CONTACTO.emailSecundario}`} className="hover:text-white transition-colors flex items-center gap-2 break-all">
+                  <span className="w-1 h-1 bg-fino-purple rounded-full flex-shrink-0"></span>
+                  {CONTACTO.emailSecundario}
+                </a>
               </li>
               <li className="pt-4"><a href="#agendar" className="text-white font-bold hover:text-fino-purple transition-colors border-b border-white/20 pb-0.5 hover:border-fino-purple">Agendar llamada →</a></li>
             </ul>
@@ -48,8 +62,8 @@ const FooterFactory: React.FC = () => {
         </div>
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-xs text-fino-text/40">
-            &copy; {new Date().getFullYear()} Veta. All rights reserved.
+          <p className="text-xs text-fino-text/40 text-center md:text-left">
+            &copy; {new Date().getFullYear()} {EMPRESA.razonSocial}. Todos los derechos reservados.
           </p>
           <div className="flex items-center bg-white/5 border border-white/5 px-4 py-2 rounded-full">
             <span className="text-[10px] text-fino-text/60 mr-3">Código limpio · Entrega real</span>
